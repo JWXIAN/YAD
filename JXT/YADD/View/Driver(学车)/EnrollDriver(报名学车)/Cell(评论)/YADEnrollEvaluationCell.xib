@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="YADEnrollEvaluationCell">
+            <rect key="frame" x="0.0" y="0.0" width="86" height="28"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="86" height="28"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务好 441" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqZ-XV-0hA">
+                        <rect key="frame" x="10" y="6" width="66" height="16"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstItem="RqZ-XV-0hA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="DcD-sg-fzK"/>
+                <constraint firstItem="RqZ-XV-0hA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="MzV-xz-lgA"/>
+                <constraint firstAttribute="bottom" secondItem="RqZ-XV-0hA" secondAttribute="bottom" constant="6" id="cnX-VF-aIb"/>
+            </constraints>
+            <size key="customSize" width="101" height="34"/>
+            <connections>
+                <outlet property="lblEvaluation" destination="RqZ-XV-0hA" id="shK-dA-a1x"/>
+            </connections>
+            <point key="canvasLocation" x="356" y="431"/>
+        </collectionViewCell>
+    </objects>
+</document>

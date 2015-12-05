@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  JXT
+//
+//  Created by JWX on 15/6/19.
+//  Copyright (c) 2015年 JW. All rights reserved.
+//
+
+#ifndef JXT_PrefixHeader_pch
+#define JXT_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG // 处于开发阶段
+#define JWLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define JWLog(...)
+#endif
+
+// RGB颜色
+#define JWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define JWRandomColor JWColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+#endif

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JWDTTSCVCell" id="gTV-IL-0wX" customClass="JWDTTSCVCell">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpz-oS-zbc">
+                        <rect key="frame" x="5" y="5" width="40" height="40"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="MPC-5j-jsg"/>
+                            <constraint firstAttribute="height" constant="40" id="ahf-gg-kgq"/>
+                        </constraints>
+                        <state key="normal" title="1">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="btnTSSelect:" destination="gTV-IL-0wX" eventType="touchUpInside" id="pD3-b2-1DP"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Gpz-oS-zbc" secondAttribute="bottom" constant="5" id="SiE-z1-L45"/>
+                <constraint firstItem="Gpz-oS-zbc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="TAC-5h-Uii"/>
+                <constraint firstItem="Gpz-oS-zbc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="ZrB-DP-ElM"/>
+                <constraint firstAttribute="trailing" secondItem="Gpz-oS-zbc" secondAttribute="trailing" constant="5" id="u8Z-qj-vDG"/>
+            </constraints>
+            <connections>
+                <outlet property="btnTS" destination="Gpz-oS-zbc" id="Ekf-LO-pNc"/>
+            </connections>
+            <point key="canvasLocation" x="374" y="408"/>
+        </collectionViewCell>
+    </objects>
+</document>

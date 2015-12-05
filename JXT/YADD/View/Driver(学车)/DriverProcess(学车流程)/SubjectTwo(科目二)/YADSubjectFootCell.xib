@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="KGk-i7-Jjw" customClass="YADSubjectFootCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_home" translatesAutoresizingMaskIntoConstraints="NO" id="BDD-rK-8b4">
+                        <rect key="frame" x="8" y="7" width="45" height="45"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="POk-kI-Jpu"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学车操作步骤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8W0-gW-6hL">
+                        <rect key="frame" x="61" y="8" width="90" height="18"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如果你无法操作" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTi-Db-QO9">
+                        <rect key="frame" x="61" y="34" width="84" height="15"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="8W0-gW-6hL" firstAttribute="leading" secondItem="BDD-rK-8b4" secondAttribute="trailing" constant="8" id="7nj-02-oKr"/>
+                    <constraint firstAttribute="bottom" secondItem="BDD-rK-8b4" secondAttribute="bottom" constant="7" id="A0k-0H-yjy"/>
+                    <constraint firstItem="BDD-rK-8b4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="Dht-aU-M3q"/>
+                    <constraint firstItem="YTi-Db-QO9" firstAttribute="top" secondItem="8W0-gW-6hL" secondAttribute="bottom" constant="8" id="P2k-nw-nJE"/>
+                    <constraint firstItem="8W0-gW-6hL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="RzV-k3-Ree"/>
+                    <constraint firstItem="BDD-rK-8b4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="XTL-jU-CX2"/>
+                    <constraint firstItem="YTi-Db-QO9" firstAttribute="leading" secondItem="BDD-rK-8b4" secondAttribute="trailing" constant="8" id="jv3-hV-fYn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tabbar_home" width="30" height="30"/>
+    </resources>
+</document>

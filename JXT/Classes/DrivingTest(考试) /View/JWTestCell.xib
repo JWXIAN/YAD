@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JWTestCell" id="gTV-IL-0wX" customClass="JWTestCell">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="275"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="449" height="275"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZX-LI-8ev">
+                        <rect key="frame" x="19" y="11" width="200" height="119"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="0fW-Ji-wNO"/>
+                            <constraint firstAttribute="height" constant="119" id="JdR-Az-YYn"/>
+                        </constraints>
+                        <state key="normal" title="章节练习" image="zjlx">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1q-Q5-enH">
+                        <rect key="frame" x="231" y="148" width="200" height="119"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="9be-yX-KMj"/>
+                            <constraint firstAttribute="height" constant="119" id="SRe-84-WhU"/>
+                        </constraints>
+                        <state key="normal" title="排除的题" image="pcdt">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd3-tE-9VP">
+                        <rect key="frame" x="231" y="11" width="200" height="119"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="XXG-BI-7Q5"/>
+                            <constraint firstAttribute="height" constant="119" id="xQ0-L4-f23"/>
+                        </constraints>
+                        <state key="normal" title="随机练习" image="sjlx">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1S-Yb-gSS">
+                        <rect key="frame" x="19" y="148" width="200" height="119"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="119" id="aAY-zu-ggH"/>
+                            <constraint firstAttribute="width" constant="200" id="qjQ-LW-X9o"/>
+                        </constraints>
+                        <state key="normal" title="专项练习" image="zxlx">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVi-Ty-7mB">
+                        <rect key="frame" x="126" y="81" width="197" height="115"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="115" id="HEw-uP-uMm"/>
+                            <constraint firstAttribute="width" constant="197" id="p2F-R7-WGD"/>
+                        </constraints>
+                        <state key="normal" title="顺序练习" image="sxlx">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="j1S-Yb-gSS" secondAttribute="bottom" constant="8" id="6AO-Od-PUu"/>
+                <constraint firstItem="zZX-LI-8ev" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="19" id="GnS-j1-K8Z"/>
+                <constraint firstItem="zZX-LI-8ev" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11" id="Kna-V5-Xhv"/>
+                <constraint firstAttribute="bottom" secondItem="W1q-Q5-enH" secondAttribute="bottom" constant="8" id="Nf4-wE-LRb"/>
+                <constraint firstAttribute="centerY" secondItem="XVi-Ty-7mB" secondAttribute="centerY" constant="-1" id="PAB-fY-xae"/>
+                <constraint firstAttribute="trailing" secondItem="W1q-Q5-enH" secondAttribute="trailing" constant="18" id="Yge-Sl-kps"/>
+                <constraint firstItem="pd3-tE-9VP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11" id="hwN-th-4ux"/>
+                <constraint firstAttribute="trailing" secondItem="pd3-tE-9VP" secondAttribute="trailing" constant="18" id="mVl-kJ-sMa"/>
+                <constraint firstItem="j1S-Yb-gSS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="19" id="nCb-kf-Sc7"/>
+                <constraint firstAttribute="centerX" secondItem="XVi-Ty-7mB" secondAttribute="centerX" id="pXL-Lc-IGS"/>
+            </constraints>
+            <size key="customSize" width="449" height="275"/>
+            <connections>
+                <outlet property="Special" destination="j1S-Yb-gSS" id="gwr-zq-zxc"/>
+                <outlet property="clean" destination="W1q-Q5-enH" id="3nM-VN-TAR"/>
+                <outlet property="fir" destination="XVi-Ty-7mB" id="cC4-Bb-nUf"/>
+                <outlet property="h1" destination="JdR-Az-YYn" id="Clm-e7-cwc"/>
+                <outlet property="h2" destination="aAY-zu-ggH" id="IrO-CL-xyP"/>
+                <outlet property="h3" destination="SRe-84-WhU" id="5lX-Lf-HHV"/>
+                <outlet property="h4" destination="xQ0-L4-f23" id="Xob-QW-wIt"/>
+                <outlet property="h5" destination="HEw-uP-uMm" id="oXg-RY-HgB"/>
+                <outlet property="other" destination="zZX-LI-8ev" id="oRI-cx-Zws"/>
+                <outlet property="stochastic" destination="pd3-tE-9VP" id="Qf3-Sg-Lgc"/>
+                <outlet property="w1" destination="0fW-Ji-wNO" id="YgC-eg-RHu"/>
+                <outlet property="w2" destination="qjQ-LW-X9o" id="vgZ-HD-fNg"/>
+                <outlet property="w3" destination="9be-yX-KMj" id="rXZ-nL-nKl"/>
+                <outlet property="w4" destination="XXG-BI-7Q5" id="dii-Kr-Yq6"/>
+                <outlet property="w5" destination="p2F-R7-WGD" id="wir-gW-FA0"/>
+            </connections>
+            <point key="canvasLocation" x="162.5" y="364.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="pcdt" width="263" height="180"/>
+        <image name="sjlx" width="263" height="180"/>
+        <image name="sxlx" width="282" height="174"/>
+        <image name="zjlx" width="263" height="180"/>
+        <image name="zxlx" width="263" height="180"/>
+    </resources>
+</document>

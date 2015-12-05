@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="KGk-i7-Jjw" customClass="YADPickUpInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年11月24日10:28:16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDF-Ph-EQB">
+                        <rect key="frame" x="16" y="8" width="180" height="20"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京西站南门" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYr-Ko-Jsh">
+                        <rect key="frame" x="16" y="44" width="72" height="15"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预约中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zri-Gb-R4U">
+                        <rect key="frame" x="270" y="8" width="42" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eY5-Xi-TUb">
+                        <rect key="frame" x="242" y="34" width="70" height="25"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.80392156862745101" green="0.33333333333333331" blue="0.29019607843137257" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="NqP-of-FCd"/>
+                            <constraint firstAttribute="height" constant="25" id="iGT-RG-Uph"/>
+                        </constraints>
+                        <state key="normal">
+                            <attributedString key="attributedTitle">
+                                <fragment content="取消">
+                                    <attributes>
+                                        <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <font key="NSFont" size="14" name="PingFangSC-Medium"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </state>
+                        <connections>
+                            <action selector="btnCancelClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qfw-gg-TcW"/>
+                        </connections>
+                    </button>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oh-ES-zYZ">
+                        <rect key="frame" x="148" y="31" width="42" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="ZDF-Ph-EQB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EpT-2y-ElV"/>
+                    <constraint firstItem="ZDF-Ph-EQB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ZfD-ZV-cAn"/>
+                    <constraint firstItem="aYr-Ko-Jsh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dO1-mk-9QA"/>
+                    <constraint firstItem="Zri-Gb-R4U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gk8-XE-cIH"/>
+                    <constraint firstAttribute="bottom" secondItem="eY5-Xi-TUb" secondAttribute="bottom" constant="1" id="hc6-T6-xcX"/>
+                    <constraint firstAttribute="trailing" secondItem="Zri-Gb-R4U" secondAttribute="trailing" constant="8" id="k2R-L1-bn1"/>
+                    <constraint firstItem="aYr-Ko-Jsh" firstAttribute="top" secondItem="ZDF-Ph-EQB" secondAttribute="bottom" constant="16" id="sgq-qH-Oeh"/>
+                    <constraint firstAttribute="trailing" secondItem="eY5-Xi-TUb" secondAttribute="trailing" constant="8" id="uzD-cA-7Ii"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="btnCancel" destination="eY5-Xi-TUb" id="iHL-bf-vbS"/>
+                <outlet property="lblDate" destination="ZDF-Ph-EQB" id="wEa-DI-5Ts"/>
+                <outlet property="lblID" destination="6oh-ES-zYZ" id="Iut-bC-yZF"/>
+                <outlet property="lblLocation" destination="aYr-Ko-Jsh" id="zJ9-Vz-w6A"/>
+                <outlet property="lblState" destination="Zri-Gb-R4U" id="W6i-JJ-chR"/>
+            </connections>
+            <point key="canvasLocation" x="273" y="319.5"/>
+        </tableViewCell>
+    </objects>
+</document>

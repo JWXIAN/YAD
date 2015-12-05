@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="YADChangPwdTVCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6Q-93-6ad">
+                        <rect key="frame" x="16" y="11" width="28" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="evc-Tf-gCN">
+                        <rect key="frame" x="68" y="0.0" width="244" height="43"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                    </textField>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="evc-Tf-gCN" secondAttribute="bottom" id="2vM-5Q-y3N"/>
+                    <constraint firstItem="S6Q-93-6ad" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3HJ-8D-KvE"/>
+                    <constraint firstAttribute="trailing" secondItem="evc-Tf-gCN" secondAttribute="trailing" constant="8" id="IqZ-XK-EwD"/>
+                    <constraint firstItem="evc-Tf-gCN" firstAttribute="leading" secondItem="S6Q-93-6ad" secondAttribute="trailing" constant="24" id="VPl-8i-svO"/>
+                    <constraint firstAttribute="bottom" secondItem="S6Q-93-6ad" secondAttribute="bottom" constant="11" id="urF-dZ-7AH"/>
+                    <constraint firstItem="evc-Tf-gCN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wvA-o8-y2O"/>
+                    <constraint firstItem="S6Q-93-6ad" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="xpL-R9-lSb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="lblTItle" destination="S6Q-93-6ad" id="unV-2d-RGp"/>
+                <outlet property="textDetail" destination="evc-Tf-gCN" id="hnG-0b-v6K"/>
+            </connections>
+            <point key="canvasLocation" x="401" y="293"/>
+        </tableViewCell>
+    </objects>
+</document>

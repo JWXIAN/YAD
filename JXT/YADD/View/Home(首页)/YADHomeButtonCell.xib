@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="YADHomeButtonCell">
+            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fz3-2l-SR1">
+                        <rect key="frame" x="0.0" y="0.0" width="65" height="48"/>
+                        <animations/>
+                        <state key="normal" image="1"/>
+                        <connections>
+                            <action selector="btnClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1SX-89-pKb"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="报名须知" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kA-GX-ztJ">
+                        <rect key="frame" x="0.0" y="48" width="65" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.079111426767676796" green="0.079111426767676796" blue="0.079111426767676796" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstItem="Fz3-2l-SR1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Dv-DT-KMA"/>
+                <constraint firstItem="Fz3-2l-SR1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7LC-d7-bIi"/>
+                <constraint firstItem="6kA-GX-ztJ" firstAttribute="top" secondItem="Fz3-2l-SR1" secondAttribute="bottom" id="DuS-ZV-FLD"/>
+                <constraint firstItem="6kA-GX-ztJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GsS-gP-Rrq"/>
+                <constraint firstAttribute="trailing" secondItem="6kA-GX-ztJ" secondAttribute="trailing" id="Z4c-mX-lCJ"/>
+                <constraint firstAttribute="trailing" secondItem="Fz3-2l-SR1" secondAttribute="trailing" id="hMh-Uo-9mo"/>
+                <constraint firstAttribute="bottom" secondItem="6kA-GX-ztJ" secondAttribute="bottom" id="rKR-aj-cc5"/>
+            </constraints>
+            <connections>
+                <outlet property="btnImage" destination="Fz3-2l-SR1" id="8wR-Oj-B6p"/>
+                <outlet property="lblTitle" destination="6kA-GX-ztJ" id="oqQ-BW-5Eu"/>
+            </connections>
+            <point key="canvasLocation" x="225.5" y="245.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="1" width="26" height="26"/>
+    </resources>
+</document>

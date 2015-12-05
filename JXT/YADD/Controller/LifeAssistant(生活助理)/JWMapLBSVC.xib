@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JWMapLBSVC">
+            <connections>
+                <outlet property="btnSearch" destination="qgv-bV-pTz" id="7Zc-bZ-tnq"/>
+                <outlet property="mapView" destination="Dwz-nu-z0b" id="OWb-kq-CSD"/>
+                <outlet property="txtObject" destination="Z9t-f5-IoN" id="otc-DI-5fi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrA-k0-5Wg">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入搜索关键字(酒店,餐厅等)" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Z9t-f5-IoN">
+                            <rect key="frame" x="30" y="15" width="476" height="30"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="g7J-Al-0a9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgv-bV-pTz">
+                            <rect key="frame" x="524" y="15" width="60" height="30"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="EpY-AG-3RQ"/>
+                                <constraint firstAttribute="width" constant="60" id="L7B-9C-q3o"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="搜索">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPoiSearchClick:" destination="-1" eventType="touchUpInside" id="fj1-1q-Sfq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="qgv-bV-pTz" firstAttribute="top" secondItem="HrA-k0-5Wg" secondAttribute="top" constant="15" id="Bal-zz-X7S"/>
+                        <constraint firstItem="Z9t-f5-IoN" firstAttribute="leading" secondItem="HrA-k0-5Wg" secondAttribute="leading" constant="30" id="Dl2-l7-4zX"/>
+                        <constraint firstItem="qgv-bV-pTz" firstAttribute="leading" secondItem="Z9t-f5-IoN" secondAttribute="trailing" constant="18" id="JGk-Uf-Gee"/>
+                        <constraint firstAttribute="trailing" secondItem="qgv-bV-pTz" secondAttribute="trailing" constant="16" id="nLT-i9-ndl"/>
+                        <constraint firstAttribute="height" constant="61" id="pjy-mI-dCh"/>
+                        <constraint firstItem="Z9t-f5-IoN" firstAttribute="top" secondItem="HrA-k0-5Wg" secondAttribute="top" constant="15" id="zJ4-tX-ebd"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwz-nu-z0b">
+                    <rect key="frame" x="0.0" y="62" width="600" height="538"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.97458630800000001" green="0.9733497405" blue="0.99494949489999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Dwz-nu-z0b" secondAttribute="trailing" id="CWA-n8-iry"/>
+                <constraint firstAttribute="trailing" secondItem="HrA-k0-5Wg" secondAttribute="trailing" id="Hua-SW-v9x"/>
+                <constraint firstAttribute="bottom" secondItem="Dwz-nu-z0b" secondAttribute="bottom" id="Res-3r-I58"/>
+                <constraint firstItem="Dwz-nu-z0b" firstAttribute="top" secondItem="HrA-k0-5Wg" secondAttribute="bottom" constant="1" id="g4L-Ai-DRa"/>
+                <constraint firstItem="HrA-k0-5Wg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rMI-vT-QZ5"/>
+                <constraint firstItem="HrA-k0-5Wg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vWl-Q8-rFa"/>
+                <constraint firstItem="Dwz-nu-z0b" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ziD-zg-NXk"/>
+            </constraints>
+            <point key="canvasLocation" x="125" y="342"/>
+        </view>
+    </objects>
+</document>

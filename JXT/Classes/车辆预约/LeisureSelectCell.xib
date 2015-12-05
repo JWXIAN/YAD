@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mycell" rowHeight="63" id="KGk-i7-Jjw" customClass="LeisureSelectCell">
+            <rect key="frame" x="0.0" y="0.0" width="324" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="324" height="62.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王教练" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eud-nU-TXB">
+                        <rect key="frame" x="8" y="11" width="45" height="18"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="京A0001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-dX-s9g">
+                        <rect key="frame" x="59" y="11" width="59.5" height="18"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-10-10 11:00-12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mb-re-LsN">
+                        <rect key="frame" x="8" y="36" width="165" height="18"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-xI-pCg">
+                        <rect key="frame" x="256" y="31" width="60" height="23"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Gkf-tS-iaZ"/>
+                            <constraint firstAttribute="height" constant="23" id="vyS-NX-JZz"/>
+                        </constraints>
+                        <state key="normal" image="lijiyuyue"/>
+                        <connections>
+                            <action selector="bespeakButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cJg-Ak-67G"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="3mb-re-LsN" firstAttribute="top" secondItem="Eud-nU-TXB" secondAttribute="bottom" constant="7" id="5i6-5k-nbt"/>
+                    <constraint firstItem="HxA-xI-pCg" firstAttribute="bottom" secondItem="3mb-re-LsN" secondAttribute="bottom" id="Ffw-Im-Tf9"/>
+                    <constraint firstItem="fWt-dX-s9g" firstAttribute="leading" secondItem="Eud-nU-TXB" secondAttribute="trailing" constant="6" id="IUG-Ea-KcF"/>
+                    <constraint firstItem="Eud-nU-TXB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="LqF-uF-cUB"/>
+                    <constraint firstAttribute="trailing" secondItem="HxA-xI-pCg" secondAttribute="trailing" constant="8" id="kTF-Nf-78w"/>
+                    <constraint firstItem="3mb-re-LsN" firstAttribute="leading" secondItem="fWt-dX-s9g" secondAttribute="trailing" constant="-110.5" id="qSH-gS-qts"/>
+                    <constraint firstItem="Eud-nU-TXB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="s9v-bg-zOK"/>
+                    <constraint firstItem="fWt-dX-s9g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="xMA-cu-K38"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="carCode" destination="fWt-dX-s9g" id="8SO-K7-7rl"/>
+                <outlet property="teacherName" destination="Eud-nU-TXB" id="e4v-Z7-K0h"/>
+                <outlet property="time" destination="3mb-re-LsN" id="QBX-iV-mDx"/>
+            </connections>
+            <point key="canvasLocation" x="209" y="230.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="lijiyuyue" width="112" height="32"/>
+    </resources>
+</document>

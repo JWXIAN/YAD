@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="JWSimulationTestCell">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvT-FK-ZYW" customClass="ImageCenterButton">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" image="tabbar_home">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="btnClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="SFP-AM-vk0"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstItem="yvT-FK-ZYW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0E1-Lx-0RO"/>
+                <constraint firstAttribute="bottom" secondItem="yvT-FK-ZYW" secondAttribute="bottom" id="Dtz-C7-57y"/>
+                <constraint firstAttribute="trailing" secondItem="yvT-FK-ZYW" secondAttribute="trailing" id="OJM-VL-L0Z"/>
+                <constraint firstItem="yvT-FK-ZYW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xmZ-97-2Wa"/>
+            </constraints>
+            <size key="customSize" width="328" height="94"/>
+            <connections>
+                <outlet property="btnTitle" destination="yvT-FK-ZYW" id="UcI-lb-wsI"/>
+            </connections>
+            <point key="canvasLocation" x="125" y="241"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="tabbar_home" width="30" height="30"/>
+    </resources>
+</document>

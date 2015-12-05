@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="433" id="KGk-i7-Jjw" customClass="YADEnrollSDThreeCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-Y7-3Qp">
+                        <rect key="frame" x="8" y="8" width="60" height="21"/>
+                        <animations/>
+                        <attributedString key="attributedText">
+                            <fragment content="班型详情">
+                                <attributes>
+                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <font key="NSFont" size="15" name="PingFangSC-Regular"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjE-el-86o">
+                        <rect key="frame" x="0.0" y="37" width="320" height="1"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="bcZ-3J-kND"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcs-xL-hhb">
+                        <rect key="frame" x="282" y="3" width="30" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="F1a-7t-TP2"/>
+                        </constraints>
+                        <state key="normal" image="tabbar_home"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C1普通班：收费3970，含考试费，有三种培训模式。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWb-Py-aoW">
+                        <rect key="frame" x="8" y="46" width="304" height="34"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UHi-wt-APx">
+                        <rect key="frame" x="8" y="88" width="304" height="130"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="130" id="vBv-Hr-D7V"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit </string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ms-lI-ccA">
+                        <rect key="frame" x="0.0" y="226" width="320" height="1"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="rbb-Rf-cdi"/>
+                        </constraints>
+                    </view>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Zen-TD-Awr">
+                        <rect key="frame" x="8" y="235" width="304" height="120"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="6FU-9H-mGA"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gdT-Rj-GVi">
+                            <size key="itemSize" width="150" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcP-Pn-vuS">
+                        <rect key="frame" x="0.0" y="363" width="320" height="1"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="PGK-Zf-52m"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdf-yj-sVS">
+                        <rect key="frame" x="8" y="372" width="304" height="44"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="2mf-Gg-QK6"/>
+                        </constraints>
+                        <state key="normal" title="浏览更多班型详情">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="btnMoreClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GfO-yD-bf8"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="Zen-TD-Awr" firstAttribute="top" secondItem="3ms-lI-ccA" secondAttribute="bottom" constant="8" id="1FE-wo-iXi"/>
+                    <constraint firstAttribute="trailing" secondItem="mjE-el-86o" secondAttribute="trailing" id="33S-kt-nIm"/>
+                    <constraint firstAttribute="trailing" secondItem="Zen-TD-Awr" secondAttribute="trailing" constant="8" id="5EV-F8-pga"/>
+                    <constraint firstAttribute="trailing" secondItem="VcP-Pn-vuS" secondAttribute="trailing" id="8wS-LD-jo7"/>
+                    <constraint firstItem="3ms-lI-ccA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Amr-e2-U5p"/>
+                    <constraint firstItem="mjE-el-86o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Djg-WB-6gs"/>
+                    <constraint firstItem="3ms-lI-ccA" firstAttribute="top" secondItem="UHi-wt-APx" secondAttribute="bottom" constant="8" id="EkJ-RK-bj1"/>
+                    <constraint firstItem="Y0I-Y7-3Qp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="F7L-7L-T8H"/>
+                    <constraint firstItem="mjE-el-86o" firstAttribute="top" secondItem="hcs-xL-hhb" secondAttribute="bottom" constant="4" id="Ge9-1T-fDh"/>
+                    <constraint firstItem="qdf-yj-sVS" firstAttribute="top" secondItem="VcP-Pn-vuS" secondAttribute="bottom" constant="8" id="JTV-Fo-2OL"/>
+                    <constraint firstAttribute="bottom" secondItem="qdf-yj-sVS" secondAttribute="bottom" constant="8" id="Jvy-BK-eQi"/>
+                    <constraint firstAttribute="trailing" secondItem="UHi-wt-APx" secondAttribute="trailing" constant="8" id="MET-Qx-EFO"/>
+                    <constraint firstItem="Y0I-Y7-3Qp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="OdJ-eB-mQ4"/>
+                    <constraint firstItem="Zen-TD-Awr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Oho-h8-3si"/>
+                    <constraint firstItem="hcs-xL-hhb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="Oq5-jL-pKN"/>
+                    <constraint firstAttribute="trailing" secondItem="hcs-xL-hhb" secondAttribute="trailing" constant="8" id="S7B-oT-GgL"/>
+                    <constraint firstItem="VcP-Pn-vuS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TPJ-5v-RRi"/>
+                    <constraint firstItem="UHi-wt-APx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="V1s-qv-lnR"/>
+                    <constraint firstItem="mjE-el-86o" firstAttribute="top" secondItem="Y0I-Y7-3Qp" secondAttribute="bottom" constant="8" id="YRC-Lt-Nky"/>
+                    <constraint firstAttribute="trailing" secondItem="qdf-yj-sVS" secondAttribute="trailing" constant="8" id="ZIn-kM-d2O"/>
+                    <constraint firstItem="GWb-Py-aoW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Zou-bQ-2ct"/>
+                    <constraint firstAttribute="trailing" secondItem="GWb-Py-aoW" secondAttribute="trailing" constant="8" id="dgP-QS-yQf"/>
+                    <constraint firstItem="qdf-yj-sVS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fS3-7b-5EC"/>
+                    <constraint firstItem="UHi-wt-APx" firstAttribute="top" secondItem="GWb-Py-aoW" secondAttribute="bottom" constant="8" id="jhr-nN-aea"/>
+                    <constraint firstAttribute="trailing" secondItem="3ms-lI-ccA" secondAttribute="trailing" id="mxo-5h-5nW"/>
+                    <constraint firstItem="VcP-Pn-vuS" firstAttribute="top" secondItem="Zen-TD-Awr" secondAttribute="bottom" constant="8" id="psb-YJ-uRk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="collectionView" destination="Zen-TD-Awr" id="nPw-2X-Uxo"/>
+                <outlet property="lblTitle" destination="GWb-Py-aoW" id="m8V-0k-73C"/>
+                <outlet property="textViewDetail" destination="UHi-wt-APx" id="9vx-9C-x6o"/>
+            </connections>
+            <point key="canvasLocation" x="315" y="284.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tabbar_home" width="30" height="30"/>
+    </resources>
+</document>
