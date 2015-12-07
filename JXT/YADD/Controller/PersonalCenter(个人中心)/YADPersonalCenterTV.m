@@ -191,7 +191,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YADPersonalCenterTVCell *cell = [YADPersonalCenterTVCell cellWithTableView:tableView];
     [cell stCellImageTitle:indexPath];
-    if (indexPath.row == 8) { //在线客服电话
+    if (indexPath.row == 9) { //在线客服电话
         [cell.contentView addSubview:[self onlineCustomerPhone:@"43242342432432"rectFrame:CGRectMake(CGRectGetMaxX(cell.cellTitle.frame)+10, 6, self.view.mj_w-CGRectGetMaxX(cell.cellTitle.frame)-40, 30)]];
     }
     return cell;

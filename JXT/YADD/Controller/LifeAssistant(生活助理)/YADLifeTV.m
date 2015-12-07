@@ -13,6 +13,8 @@
 #import "YADLifeButtonCell.h"
 #import "JWMapLBSVC.h"
 #import "YADWebViewVC.h"
+#import <ShareSDK/ShareSDK.h>
+#import "SVProgressHUD.h"
 
 @interface YADLifeTV ()<UICollectionViewDelegate, UICollectionViewDataSource, YADLifeButtonCellDelegate>
 /**布局flowLayout*/
@@ -46,12 +48,13 @@ static NSString *const kheaderIdentifier = @"kheaderIdentifier";
     UIBarButtonItem *right= [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(barButtonRightClick)];
     self.navigationItem.rightBarButtonItem=right;
 }
-#pragma mark - 导航左边按钮
-- (void)barButtonLeftClick{
-    
-}
+//#pragma mark - 导航左边按钮
+//- (void)barButtonLeftClick{
+//    
+//}
 #pragma mark - 导航右边按钮
 - (void)barButtonRightClick{
+    [self shareWithView:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -245,6 +248,25 @@ static NSString *const kheaderIdentifier = @"kheaderIdentifier";
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     return UIEdgeInsetsMake(8, 8, 8, 8);
+}
+
+#pragma mark 显示分享菜单
+- (void)shareWithView:(UIView* )sView{
+    
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"" defaultContent:@"" image:[ShareSDK imageWithUrl:@""] title:@"江西亿安达驾校" url:@"" description:@"" mediaType:SSPublishContentMediaTypeNews];
+    
+    //创建弹出菜单容器
+    id<ISSContainer> container = [ShareSDK container];
+    [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
+    
+    [ShareSDK showShareActionSheet:container shareList:nil content:publishContent statusBarTips:YES authOptions:nil shareOptions:nil result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+        if (state == SSResponseStateSuccess) {
+            [SVProgressHUD showSuccessWithStatus:@"分享成功"];
+        }else if(state == SSResponseStateFail){
+            [SVProgressHUD showErrorWithStatus:@"分享失败"];
+        }
+    }];
 }
 
 @end

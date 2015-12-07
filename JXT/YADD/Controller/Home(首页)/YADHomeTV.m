@@ -23,8 +23,7 @@
 #import "YADHomeAPI.h"
 
 //ShareSDK
-//#import <ShareSDK/ShareSDK.h>
-//#import <ShareSDKUI/ShareSDK+SSUI.h>
+#import <ShareSDK/ShareSDK.h>
 
 #import "SVProgressHUD.h"
 
@@ -361,13 +360,21 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
 }
 
 #pragma mark 显示分享菜单
-
-/**
- *  显示分享菜单
- *
- *  @param view 容器视图
- */
-//TODO: 修改分享内容
 - (void)shareWithView:(UIView* )sView{
+    
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"" defaultContent:@"" image:[ShareSDK imageWithUrl:@""] title:@"江西亿安达驾校" url:@"" description:@"" mediaType:SSPublishContentMediaTypeNews];
+    
+    //创建弹出菜单容器
+    id<ISSContainer> container = [ShareSDK container];
+    [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
+    
+    [ShareSDK showShareActionSheet:container shareList:nil content:publishContent statusBarTips:YES authOptions:nil shareOptions:nil result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+        if (state == SSResponseStateSuccess) {
+            [SVProgressHUD showSuccessWithStatus:@"分享成功"];
+        }else if(state == SSResponseStateFail){
+            [SVProgressHUD showErrorWithStatus:@"分享失败"];
+        }
+    }];
 }
 @end

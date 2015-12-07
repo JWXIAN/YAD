@@ -15,6 +15,8 @@
 #import "PrefixHeader.pch"
 #import "YADChangPwdTV.h"
 #import "SVProgressHUD.h"
+#import <ShareSDK/ShareSDK.h>
+
 
 @interface YADSettingTV ()
 
@@ -122,6 +124,10 @@
         }else{
             [SVProgressHUD showErrorWithStatus:@"请登录后修改密码"];
         }
+    }else if(indexPath.section == 1){
+        if (indexPath.row == 1) {
+            [self shareWithView:nil];
+        }
     }
 }
 
@@ -131,5 +137,25 @@
 }
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
     view.tintColor = [UIColor clearColor];
+}
+
+
+#pragma mark 显示分享菜单
+- (void)shareWithView:(UIView* )sView{
+    
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"" defaultContent:@"" image:[ShareSDK imageWithUrl:@""] title:@"江西亿安达驾校" url:@"" description:@"" mediaType:SSPublishContentMediaTypeNews];
+    
+    //创建弹出菜单容器
+    id<ISSContainer> container = [ShareSDK container];
+    [container setIPadContainerWithView:self.view arrowDirect:UIPopoverArrowDirectionUp];
+    
+    [ShareSDK showShareActionSheet:container shareList:nil content:publishContent statusBarTips:YES authOptions:nil shareOptions:nil result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+        if (state == SSResponseStateSuccess) {
+            [SVProgressHUD showSuccessWithStatus:@"分享成功"];
+        }else if(state == SSResponseStateFail){
+            [SVProgressHUD showErrorWithStatus:@"分享失败"];
+        }
+    }];
 }
 @end
