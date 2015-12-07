@@ -163,6 +163,8 @@
             [ud setObject:_studentLogin.per_name forKey:@"_studentLogin.per_name"];
             //学号
             [ud setObject:_studentLogin.train_learnid forKey:@"train_learnid"];
+            //密码
+            [ud setObject:_studentLogin.per_password forKey:UserLogin_PassWord];
             //存是否登录成功
             [ud setBool:YES forKey:UserIsaAlreadyLogin_Bool];
             [ud synchronize];

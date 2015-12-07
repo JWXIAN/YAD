@@ -42,7 +42,7 @@
     switch (indexPath.row) {
         case 0:
             strTitle = @"学车流程";
-            strImage = @"";
+            strImage = @"个人中心-学车流程";
             break;
         case 1:
             strTitle = @"练车预约";

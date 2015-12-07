@@ -100,7 +100,7 @@
     //4.提示是否登录 - 登录后显示用户名
     UILabel *lblName = [[UILabel alloc] initWithFrame:CGRectMake(self.view.mj_w/2-40, CGRectGetMaxY(userPhoto.frame)+5, 80, 20)];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:UserIsaAlreadyLogin_Bool] == YES) {
-        lblName.text = _studentLogin.per_name;
+        lblName.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"_studentLogin.per_name"];
     }else{
         lblName.text = @"请点击登录";
     }

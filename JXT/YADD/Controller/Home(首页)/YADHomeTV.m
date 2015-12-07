@@ -20,6 +20,7 @@
 #import "JWMapLBSVC.h"
 #import "YADWebViewVC.h"
 #import "YADLoginTV.h"
+#import "YADHomeAPI.h"
 
 //ShareSDK
 //#import <ShareSDK/ShareSDK.h>
@@ -34,6 +35,9 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) UIView *headerView;
+
+/**轮播图片*/
+@property (nonatomic, strong) NSArray *arrScrollImage;
 @end
 
 /**cell重用标识符*/
@@ -43,6 +47,7 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self itView];
     [self TBRefresh];
 }
@@ -55,10 +60,7 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
     __weak __typeof(self) weakSelf = self;
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        self.tableView.tableHeaderView = [weakSelf loadHeaderView];
-        [weakSelf.tableView reloadData];
-        // 结束刷新状态
-        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf itScrollImage];
     }];
     // 马上进入刷新状态
     [self.tableView.mj_header beginRefreshing];
@@ -73,6 +75,21 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
     }
 }
 
+#pragma mark - 加载轮播图片数据
+- (void)itScrollImage{
+    __weak __typeof(self) weakSelf = self;
+    [YADHomeAPI getHomeScrollImage:^(NSDictionary *result) {
+        if ([[result valueForKeyPath:@"head.issuccess"] isEqualToString:@"true"]) {
+            weakSelf.arrScrollImage = [result valueForKeyPath:@"body"];
+            //2、滚动广告图
+            [weakSelf scrollPageImage:[result valueForKeyPath:@"body.imgurl"] titles:nil];
+            // 结束刷新状态
+            [weakSelf.tableView.mj_header endRefreshing];
+        }
+    }];
+}
+
+#pragma mark - 初始化
 - (void)itView{
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -80,7 +97,7 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.mj_w, 50)];
     //创建左侧barButtonItem - 个人信息
     UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [leftButton setImage:[UIImage imageNamed:@"头像"] forState:UIControlStateNormal];
+    [leftButton setImage:[UIImage imageNamed:@"Home头像"] forState:UIControlStateNormal];
     UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftButton];
     [leftButton addTarget:self action:@selector(barButtonLeftClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem=left;
@@ -93,6 +110,8 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
     self.automaticallyAdjustsScrollViewInsets = NO;
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"透明图"] forBarMetrics:UIBarMetricsCompact];
 //    self.navigationController.navigationBar.alpha = 0.1;
+    
+    self.tableView.tableHeaderView = [self loadHeaderView];
 }
 
 #pragma mark - 导航左边按钮
@@ -110,7 +129,7 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
 }
 #pragma mark - 导航右边分享按钮
 - (void)barButtonRightClick{
-//    [self shareWithView:nil];
+    [self shareWithView:nil];
 }
 
 #pragma mark - 主页Button跳转
@@ -125,7 +144,8 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
             car.title = @"预约练车";
             [self.navigationController pushViewController:car animated:YES];
         }else if (btnTag == 3){  //考试预约
-            
+            NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+            [self itWebView:[NSString stringWithFormat:@"http://123.57.20.156:55555/student/appbaokao.aspx?name=%@&pwd=%@", [ud objectForKey:@"per_idcardno"], [ud objectForKey:UserLogin_PassWord]] strTitle:@"在线约考"];
         }else if (btnTag == 4){  //校园地图
             [self itWebView:@"http://182.92.70.91:22223/yianda/xydt.html" strTitle:@"校园地图"];
         }else if (btnTag == 5){  //班车查询
@@ -167,8 +187,7 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
     //1、底层View
     _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.mj_w, self.view.mj_h-20)];
     _headerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    //2、滚动广告图
-    [self scrollPageImage:nil titles:nil];
+    
     //3、CollectionView
     [_headerView addSubview:[self loadCollectionView]];
     
@@ -195,40 +214,41 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
 }
 #pragma mark - 滚动图
 - (void)scrollPageImage:(NSArray *)arrImagesURL titles:(NSArray *)arrTitles{
-    // 情景一：采用本地图片实现
-    NSArray *images = @[[UIImage imageNamed:@"h1.jpg"],
-                        [UIImage imageNamed:@"h2.jpg"],
-                        [UIImage imageNamed:@"h3.jpg"],
-                        [UIImage imageNamed:@"h4.jpg"]
-                        ];
-    // 本地加载 --- 创建不带标题的图片轮播器
-    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.mj_w, self.headerView.mj_h/2+80) imagesGroup:images];
-    
-    cycleScrollView.infiniteLoop = YES;
-    cycleScrollView.delegate = self;
-    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
-    [_headerView addSubview:cycleScrollView];
+//    // 情景一：采用本地图片实现
+//    NSArray *images = @[[UIImage imageNamed:@"h1.jpg"],
+//                        [UIImage imageNamed:@"h2.jpg"],
+//                        [UIImage imageNamed:@"h3.jpg"],
+//                        [UIImage imageNamed:@"h4.jpg"]
+//                        ];
+//    // 本地加载 --- 创建不带标题的图片轮播器
+//    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.mj_w, self.headerView.mj_h/2+80) imagesGroup:images];
+//    
+//    cycleScrollView.infiniteLoop = YES;
+//    cycleScrollView.delegate = self;
+//    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+//    [_headerView addSubview:cycleScrollView];
     //         --- 轮播时间间隔，默认1.0秒，可自定义
-    //cycleScrollView.autoScrollTimeInterval = 4.0;
-//    //采用网络图片实现
+//    cycleScrollView.autoScrollTimeInterval = 4.0;
+    //采用网络图片实现
 //    NSArray *imagesURLStrings = @[@"www.baidu.com/img/bd_logo1.png",
 //                                  @"www.baidu.com/img/bd_logo1.png",
 //                                  @"www.baidu.com/img/bd_logo1.png"];
-//    CGFloat w = self.view.bounds.size.width;
-//    //网络加载 --- 创建带标题的图片轮播器
-//    SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, w, self.headerView.mj_h/2+80) imageURLStringsGroup:imagesURLStrings]; // 模拟网络延时情景
-//    cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-//    cycleScrollView2.delegate = self;
-//    cycleScrollView2.dotColor = [UIColor redColor]; // 自定义分页控件小圆标颜色
-//    cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
-//    cycleScrollView2.placeholderImage = [UIImage imageNamed:@"placeholder"];
-//    [self.view addSubview:cycleScrollView2];
+    CGFloat w = self.view.bounds.size.width;
+    //网络加载 --- 创建带标题的图片轮播器
+    SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, w, self.headerView.mj_h/2+80) imageURLStringsGroup:arrImagesURL];
+    cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    cycleScrollView2.delegate = self;
+    cycleScrollView2.autoScrollTimeInterval = 3.0;
+    cycleScrollView2.dotColor = [UIColor redColor]; // 自定义分页控件小圆标颜色
+    cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
+    cycleScrollView2.placeholderImage = [UIImage imageNamed:@"placeholder"];
+    [self.view addSubview:cycleScrollView2];
 }
 #pragma mark - SDCycleScrollViewDelegate
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-    NSLog(@"---点击了第%ld张图片", index);
+    [self itWebView:[[_arrScrollImage objectAtIndex:index] valueForKey:@"linkurl"] strTitle:@"亿安达驾校"];
 }
 
 #pragma mark - Table view data source
@@ -340,49 +360,14 @@ static NSString *const CellIdentifier = @"YADHomeButtonCell";
     return UIEdgeInsetsMake(8, 8, 8, 8);
 }
 
-//#pragma mark 显示分享菜单
-//
-///**
-// *  显示分享菜单
-// *
-// *  @param view 容器视图
-// */
-////TODO: 修改分享内容
-//- (void)shareWithView:(UIView* )sView
-//{
-//    //创建分享参数
-//    NSArray* imageArray = @[[UIImage imageNamed:@"h1"]];
-//    //    （注意：图片必须有且名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
-//    if (imageArray) {
-//        
-//        NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-//        [shareParams SSDKSetupShareParamsByText:@"分享内容"
-//                                         images:imageArray
-//                                            url:[NSURL URLWithString:@""]
-//                                          title:@"分享标题"
-//                                           type:SSDKContentTypeAuto];
-//        //2、分享（可以弹出我们的分享菜单和编辑界面）
-//        [ShareSDK showShareActionSheet:sView //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
-//                                 items:nil
-//                           shareParams:shareParams
-//                   onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
-//                       
-//                       switch (state) {
-//                           case SSDKResponseStateSuccess:
-//                           {
-//                               [SVProgressHUD showSuccessWithStatus:@"分享成功"];
-//                               break;
-//                           }
-//                           case SSDKResponseStateFail:
-//                           {
-//                               [SVProgressHUD showErrorWithStatus:@"分享成功"];
-//                               break;
-//                           }
-//                           default:
-//                               break;
-//                       }
-//                       
-//                   }];
-//    }
-//}
+#pragma mark 显示分享菜单
+
+/**
+ *  显示分享菜单
+ *
+ *  @param view 容器视图
+ */
+//TODO: 修改分享内容
+- (void)shareWithView:(UIView* )sView{
+}
 @end

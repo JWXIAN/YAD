@@ -31,7 +31,7 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"JWMyNewsCell" owner:nil options:nil] lastObject];
     }
     cell.lblBT.layer.masksToBounds = YES;
-    cell.lblBT.layer.cornerRadius = 5;
+    cell.lblBT.layer.cornerRadius = 1;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor whiteColor];
     //设置自动行数与字符换行

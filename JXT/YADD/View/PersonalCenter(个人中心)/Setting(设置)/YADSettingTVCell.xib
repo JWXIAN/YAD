@@ -15,14 +15,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_home" translatesAutoresizingMaskIntoConstraints="NO" id="71w-fb-Ub9">
-                        <rect key="frame" x="8" y="7" width="30" height="30"/>
+                        <rect key="frame" x="16" y="11" width="20" height="20"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="XBn-fx-Vdw"/>
+                            <constraint firstAttribute="width" constant="20" id="XBn-fx-Vdw"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-KL-CxD">
-                        <rect key="frame" x="46" y="12" width="56" height="20"/>
+                        <rect key="frame" x="52" y="12" width="56" height="20"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -31,12 +31,12 @@
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="71w-fb-Ub9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="37b-0s-rUo"/>
+                    <constraint firstItem="71w-fb-Ub9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="37b-0s-rUo"/>
                     <constraint firstAttribute="bottom" secondItem="d1b-KL-CxD" secondAttribute="bottom" constant="11" id="CnA-pz-9OY"/>
                     <constraint firstItem="d1b-KL-CxD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="MbF-qR-GNN"/>
-                    <constraint firstAttribute="bottom" secondItem="71w-fb-Ub9" secondAttribute="bottom" constant="6" id="Uk8-2V-nnH"/>
-                    <constraint firstItem="d1b-KL-CxD" firstAttribute="leading" secondItem="71w-fb-Ub9" secondAttribute="trailing" constant="8" id="eh3-Jr-BQE"/>
-                    <constraint firstItem="71w-fb-Ub9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="hlR-sC-vSj"/>
+                    <constraint firstAttribute="bottom" secondItem="71w-fb-Ub9" secondAttribute="bottom" constant="12" id="Uk8-2V-nnH"/>
+                    <constraint firstItem="d1b-KL-CxD" firstAttribute="leading" secondItem="71w-fb-Ub9" secondAttribute="trailing" constant="16" id="eh3-Jr-BQE"/>
+                    <constraint firstItem="71w-fb-Ub9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="hlR-sC-vSj"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>

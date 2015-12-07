@@ -39,39 +39,39 @@
     NSString *strImage;
     if (indexPath.section == 0) {
         strTitle = @"修改密码";
-        strImage = @"";
+        strImage = @"设置-修改密码";
     }else if (indexPath.section == 1){
         switch (indexPath.row) {
             case 0:
                 strTitle = @"接受推送";
-                strImage = @"";
+                strImage = @"设置-接受推送";
                 break;
             case 1:
                 strTitle = @"分享给朋友";
-                strImage = @"";
+                strImage = @"设置-分享给朋友";
                 break;
             case 2:
                 strTitle = @"意见反馈";
-                strImage = @"";
+                strImage = @"设置-意见反馈";
                 break;
         }
     }else{
         switch (indexPath.row) {
             case 0:
                 strTitle = @"使用帮助";
-                strImage = @"";
+                strImage = @"设置-使用帮助";
                 break;
             case 1:
                 strTitle = @"联系客服";
-                strImage = @"";
+                strImage = @"设置-联系客服";
                 break;
             case 2:
                 strTitle = @"关于";
-                strImage = @"";
+                strImage = @"个人中心-我的消息";
                 break;
         }
     }
     _cellTitle.text = strTitle;
-    _cellImage.image = [UIImage imageNamed:@"tabbar_home"];
+    _cellImage.image = [UIImage imageNamed:strImage];
 }
 @end

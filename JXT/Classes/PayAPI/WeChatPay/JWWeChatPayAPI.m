@@ -113,7 +113,7 @@
             UInt32 timeStamp =[timeSp intValue];
             request.timeStamp= timeStamp;
             DataMD5 *md5 = [[DataMD5 alloc] init];
-            request.sign=[md5 createMD5SingForPay:@"wxc1452ee4722071a5" partnerid:request.partnerId prepayid:request.prepayId package:request.package noncestr:request.nonceStr timestamp:request.timeStamp];
+            request.sign=[md5 createMD5SingForPay:@"wx61acca87c7d8684c" partnerid:request.partnerId prepayid:request.prepayId package:request.package noncestr:request.nonceStr timestamp:request.timeStamp];
             [MBProgressHUD hideHUD];
             //调用微信
             [WXApi sendReq:request];

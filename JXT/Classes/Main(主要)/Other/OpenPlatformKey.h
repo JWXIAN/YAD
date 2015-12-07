@@ -21,9 +21,9 @@ static NSString* const weiboSecret = @"a8c2a7c416f4e96652731c154c8e4f71";
 /**微博回调地址*/
 static NSString* const weiboredirectUri = @"http://www.sharesdk.cn";
 /**微信AppKey*/
-static NSString* const weChatAppKey = @"wx707595f9e4ef735a";
+static NSString* const weChatAppKey = @"wx61acca87c7d8684c";
 /**微信秘钥*/
-static NSString* const weChatSecret = @"7df56641cc021641c67ca2339f9c74cf";
+static NSString* const weChatSecret = @"e2aa629ea282759a348d19b631a069a7";
 /**QQ AppID*/
 static NSString* const QQAppID = @"1104927894";
 /**QQ AppKey*/
@@ -36,5 +36,3 @@ static NSString* const JPushKey =@"e9b84cacbc99be184db765a5";
 static NSString* const BaiDuMapKey =@"YHNG3qVuvAVQN1B0gEgi7WF4";
 /**支付宝Key*/
 static NSString* const AliPayKey =@"YHNG3qVuvAVQN1B0gEgi7WF4";
-/**支付宝Key*/
-static NSString* const WeChatKey =@"YHNG3qVuvAVQN1B0gEgi7WF4";

@@ -16,6 +16,7 @@
 		7F0A4D191C12B29700297C0C /* YADChangPwdTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0A4D171C12B29700297C0C /* YADChangPwdTVCell.xib */; };
 		7F0A4D1C1C12B9D200297C0C /* YADUserInfoModifyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A4D1B1C12B9D200297C0C /* YADUserInfoModifyAPI.m */; };
 		7F18523D1C0D356F00FDA9EA /* RegexKitLite.h in Sources */ = {isa = PBXBuildFile; fileRef = C7AACE121B671DE00092C7C2 /* RegexKitLite.h */; };
+		7F51670D1C150C09001C9EAC /* YADHomeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F51670C1C150C09001C9EAC /* YADHomeAPI.m */; };
 		7F5FFFFA1B39542B0083E04B /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5FFFF91B39542B0083E04B /* MBProgressHUD+MJ.m */; };
 		7F666F761B3D28D8006A5050 /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F666F751B3D28D8006A5050 /* setting.plist */; };
 		7F666F7A1B3D4CA9006A5050 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F666F791B3D4CA9006A5050 /* NSArray+Log.m */; };
@@ -646,6 +647,8 @@
 		7F0A4D171C12B29700297C0C /* YADChangPwdTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YADChangPwdTVCell.xib; sourceTree = "<group>"; };
 		7F0A4D1A1C12B9D200297C0C /* YADUserInfoModifyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YADUserInfoModifyAPI.h; sourceTree = "<group>"; };
 		7F0A4D1B1C12B9D200297C0C /* YADUserInfoModifyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YADUserInfoModifyAPI.m; sourceTree = "<group>"; };
+		7F51670B1C150C09001C9EAC /* YADHomeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YADHomeAPI.h; sourceTree = "<group>"; };
+		7F51670C1C150C09001C9EAC /* YADHomeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YADHomeAPI.m; sourceTree = "<group>"; };
 		7F5FFFF81B39542B0083E04B /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		7F5FFFF91B39542B0083E04B /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		7F666F751B3D28D8006A5050 /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
@@ -2828,6 +2831,8 @@
 				7FA2B3771C1164C200F150DC /* YADLoginAPI.m */,
 				7F0A4D1A1C12B9D200297C0C /* YADUserInfoModifyAPI.h */,
 				7F0A4D1B1C12B9D200297C0C /* YADUserInfoModifyAPI.m */,
+				7F51670B1C150C09001C9EAC /* YADHomeAPI.h */,
+				7F51670C1C150C09001C9EAC /* YADHomeAPI.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -4934,11 +4939,11 @@
 		00759A421B33B640002B1A22 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = JW;
+				CLASSPREFIX = YAD;
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = JW;
+				ORGANIZATIONNAME = YAD;
 				TargetAttributes = {
 					00759A491B33B640002B1A22 = {
 						CreatedOnToolsVersion = 6.2;
@@ -5567,6 +5572,7 @@
 				C7BC3AA41BCD0DDF00D852AD /* JWAliPayAPI.m in Sources */,
 				C7B663981B79F4BE00D58C76 /* NSArray+Extend.m in Sources */,
 				C7B663871B79F4BE00D58C76 /* NSObject+Contrast.m in Sources */,
+				7F51670D1C150C09001C9EAC /* YADHomeAPI.m in Sources */,
 				C7B6639E1B79F4BE00D58C76 /* UIDevice+Extend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5722,6 +5728,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"$(SRCROOT)/JXT/wan\"",
+					"$(SRCROOT)/Classes/Main(主要)/Lib/Jpush",
 				);
 				INFOPLIST_FILE = JXT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -5777,6 +5784,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"$(SRCROOT)/JXT/wan\"",
+					"$(SRCROOT)/Classes/Main(主要)/Lib/Jpush",
 				);
 				INFOPLIST_FILE = JXT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

@@ -51,7 +51,7 @@
 
 - (void)setPerson:(JWProfileModel *)person{
     _person = person;
-    [_cellImage sd_setImageWithURL:[NSURL URLWithString:_person.per_photo] placeholderImage:[UIImage imageNamed:@"zh"]];
+    [_cellImage sd_setImageWithURL:[NSURL URLWithString:_person.per_photo] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     _cellDetailName.text=_person.per_name;
     _cellDetailNo.text = _person.per_id;
     _cellDetailPhone.text= _person.per_mobile;

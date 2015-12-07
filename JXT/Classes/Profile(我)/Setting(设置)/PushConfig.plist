@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>APP_KEY</key>
-	<string>67b3bd36a90afd51910968e3</string>
+	<string>77e7a428cc42485fd0bf9eb7</string>
 	<key>CHANNEL</key>
 	<string>Publish channel</string>
 	<key>APS_FOR_PRODUCTION</key>
-	<string>1</string>
+	<string>0</string>
 </dict>
 </plist>

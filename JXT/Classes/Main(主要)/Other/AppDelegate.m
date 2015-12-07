@@ -232,11 +232,14 @@
     /**友盟统计*/
     [self umengTrack];
     
+    //极光推送
+    [self JpushWithlaunchOption:launchOptions];
+    
     // 3.显示窗口
     [self.window makeKeyAndVisible];
     
 #pragma mark - 微信支付
-    BOOL isok = [WXApi registerApp:@"wxc1452ee4722071a5"];
+    BOOL isok = [WXApi registerApp:weChatAppKey];
     if (isok) {
         NSLog(@"注册微信成功");
     }else{
@@ -246,69 +249,80 @@
 #pragma mark - 分享
     [self shareSDK];
     
-#pragma mark - 推送
-    [APService clearAllLocalNotifications];
-    NSString *ismessage= [user objectForKey:@"message"];
-    if (![ismessage isEqualToString:@"SWITCH_NO"]) {
+//#pragma mark - 推送
+//    NSString *ismessage= [user objectForKey:@"message"];
+//    if (![ismessage isEqualToString:@"SWITCH_NO"]) {
 
-        // Required
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
-        if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-            //可以添加自定义categories
-            [APService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
-                                                           UIUserNotificationTypeSound |
-                                                           UIUserNotificationTypeAlert)
-                                               categories:nil];
-        } else {
-            //categories 必须为nil
-            [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                           UIRemoteNotificationTypeSound |
-                                                           UIRemoteNotificationTypeAlert)
-                                               categories:nil];
-        }
-#else
-        //categories 必须为nil
-        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                       UIRemoteNotificationTypeSound |
-                                                       UIRemoteNotificationTypeAlert)
-                                           categories:nil];
-#endif
-        // Required
-        [APService setupWithOption:launchOptions];
-        
-    }
-    //接收未启动app时的推送消息
-    NSDictionary *remoteNotification = [launchOptions objectForKey: UIApplicationLaunchOptionsRemoteNotificationKey];
-    NSDictionary *aps = [remoteNotification valueForKey:@"aps"];
-    NSString *content = [aps valueForKey:@"alert"]; //推送显示的内容
+//        // Required
+//#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
+//        if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+//            //可以添加自定义categories
+//            [APService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+//                                                           UIUserNotificationTypeSound |
+//                                                           UIUserNotificationTypeAlert)
+//                                               categories:nil];
+//        } else {
+//            //categories 必须为nil
+//            [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+//                                                           UIRemoteNotificationTypeSound |
+//                                                           UIRemoteNotificationTypeAlert)
+//                                               categories:nil];
+//        }
+//#else
+//        //categories 必须为nil
+//        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+//                                                       UIRemoteNotificationTypeSound |
+//                                                       UIRemoteNotificationTypeAlert)
+//                                           categories:nil];
+//#endif
+//        // Required
+//        [APService setupWithOption:launchOptions];
+//        
+//    }
+//    //接收未启动app时的推送消息
+//    NSDictionary *remoteNotification = [launchOptions objectForKey: UIApplicationLaunchOptionsRemoteNotificationKey];
+//    NSDictionary *aps = [remoteNotification valueForKey:@"aps"];
+//    NSString *content = [aps valueForKey:@"alert"]; //推送显示的内容
     
  
-    if(content != nil){
-        //存时间
-        NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-        NSString *date = [formatter stringFromDate:[NSDate date]];
-        
-        //保存推送消息到plist文件
-        [JWMyNewsTV setNews:content newsDate:date newsType:@"推送消息"];
-        _isLaunchedByNotification = YES;
-    }else{
-        _isLaunchedByNotification = NO;
-    }
+//    if(content != nil){
+//        //存时间
+//        NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+//        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//        NSString *date = [formatter stringFromDate:[NSDate date]];
+//        
+//        //保存推送消息到plist文件
+//        [JWMyNewsTV setNews:content newsDate:date newsType:@"推送消息"];
+//        _isLaunchedByNotification = YES;
+//    }else{
+//        _isLaunchedByNotification = NO;
+//    }
     
     //    [教练关注提醒]您关注的教练 [张三(1001)] 有空余时段可约了！
     
-    if ([content containsString:@"教练关注提醒"]) {
-        JWTarBarController* tabbar= [[JWTarBarController alloc] init];
-        tabbar.selectedIndex=1;
-//        _navi=[[JWNavController alloc]initWithRootViewController:tabbar];
-//        _navi.navigationBarHidden=YES;
-//        LeftSortsViewController *leftVC = [[LeftSortsViewController alloc] init];
-//        self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:_navi];
-        self.window.rootViewController = tabbar;
-    }
+//    if ([content containsString:@"教练关注提醒"]) {
+//        JWTarBarController* tabbar= [[JWTarBarController alloc] init];
+//        tabbar.selectedIndex=1;
+////        _navi=[[JWNavController alloc]initWithRootViewController:tabbar];
+////        _navi.navigationBarHidden=YES;
+////        LeftSortsViewController *leftVC = [[LeftSortsViewController alloc] init];
+////        self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:_navi];
+//        self.window.rootViewController = tabbar;
+//    }
     
     return YES;
+}
+
+#pragma mark - 极光推送
+-(void)JpushWithlaunchOption:(NSDictionary *)launchOptions
+{
+    [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                   UIRemoteNotificationTypeSound |
+                                                   UIRemoteNotificationTypeAlert)
+                                       categories:nil];
+    [APService setupWithOption:launchOptions];
+    
+    
 }
 
 #pragma mark - 分享
@@ -337,8 +351,8 @@
                            tencentOAuthCls:[TencentOAuth class]];
     
         //添加微信应用  http://open.weixin.qq.com
-        [ShareSDK connectWeChatWithAppId:@"wxc1452ee4722071a5"
-                               appSecret:@"21e42b052001cc3d04803b4e481c04be"
+        [ShareSDK connectWeChatWithAppId:weChatAppKey
+                               appSecret:weChatSecret
                                wechatCls:[WXApi class]];
     
         //连接短信分享
@@ -446,6 +460,7 @@
     }
     
 }
+
 #pragma mark 消息推送  Remote Notification 特性
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler//后台消息推送
 {
@@ -548,12 +563,13 @@
 //    [self jsStart];
 //     [self startJPEngine];
      [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    [APService clearAllLocalNotifications];//清楚本地通知
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

@@ -1,5 +1,5 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7D2753F0BAF6377A2623237455C074DE8EA457D7+++FFB01B4",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D3679FBBF2DB84A100F45A4DE6CFEE9FE48B2F4F+++4495A8A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
@@ -7,6 +7,7 @@
     "7D2753F0BAF6377A2623237455C074DE8EA457D7+++F124515" : 0,
     "EC3C28715996457305D181B026EF84C93F5BB6B3+++03E1816" : 0,
     "7D2753F0BAF6377A2623237455C074DE8EA457D7+++04C635B" : 0,
+    "D3679FBBF2DB84A100F45A4DE6CFEE9FE48B2F4F+++4495A8A" : 0,
     "EC3C28715996457305D181B026EF84C93F5BB6B3+++58E3195" : 0,
     "7D2753F0BAF6377A2623237455C074DE8EA457D7+++FFB01B4" : 0
   },
@@ -15,6 +16,7 @@
     "7D2753F0BAF6377A2623237455C074DE8EA457D7+++F124515" : "XCT%203",
     "EC3C28715996457305D181B026EF84C93F5BB6B3+++03E1816" : "XCT-GIT\/",
     "7D2753F0BAF6377A2623237455C074DE8EA457D7+++04C635B" : "XCT%203",
+    "D3679FBBF2DB84A100F45A4DE6CFEE9FE48B2F4F+++4495A8A" : "YAD_GIT\/",
     "EC3C28715996457305D181B026EF84C93F5BB6B3+++58E3195" : "xct\/",
     "7D2753F0BAF6377A2623237455C074DE8EA457D7+++FFB01B4" : "JXT\/"
   },
@@ -36,6 +38,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JWXIAN\/XCT.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7D2753F0BAF6377A2623237455C074DE8EA457D7+++FFB01B4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JWXIAN\/YAD.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D3679FBBF2DB84A100F45A4DE6CFEE9FE48B2F4F+++4495A8A"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/culiu\/xct.git",

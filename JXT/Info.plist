@@ -27,7 +27,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxc1452ee4722071a5</string>
+				<string>wx61acca87c7d8684c</string>
 			</array>
 		</dict>
 		<dict>
@@ -69,7 +69,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxc1452ee4722071a5</string>
+				<string>wx61acca87c7d8684c</string>
 			</array>
 		</dict>
 	</array>
